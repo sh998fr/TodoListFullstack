@@ -239,6 +239,8 @@ app.MapGet("/health", async (ToDoDbContext db) => {
     return Results.Ok(new { status = "Healthy", dbStatus, time = DateTime.UtcNow });
 });
 
+app.MapGet("/", () => Results.Ok(new { status = "ok", message = "Todo API is running!" }));
+
 app.Run();
 
 
